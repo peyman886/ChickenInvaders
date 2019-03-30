@@ -14,7 +14,7 @@ public class Main {
         gameFrame.setMinimumSize(new Dimension(frameWidth,frameHeight));
         gameFrame.setPreferredSize(new Dimension(frameWidth,frameHeight));
         gameFrame.setResizable(false);
-        gameFrame.setLocation(300,100);
+        gameFrame.setLocation(300,200);
 
         //Display the window
         gameFrame.setVisible(true);
