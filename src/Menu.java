@@ -33,15 +33,15 @@ public class Menu extends JFrame {
     private int myButtonWith = 100,
                 myButtonHeight = 50;
 
-    MenuPanel menuPanel;
-    MyLable usersLabel;
+    private MenuPanel menuPanel;
+    private MyLable usersLabel;
 
-    JList userList;
-    ArrayList<String> usersName = new ArrayList<>();
+    private JList userList;
+    private ArrayList<String> usersName = new ArrayList<>();
 
-    MyButton loginButton;
-    MyButton addUserButton;
-    MyButton removeUserButton;
+    private MyButton loginButton;
+    private MyButton addUserButton;
+    private MyButton removeUserButton;
 
 
 
