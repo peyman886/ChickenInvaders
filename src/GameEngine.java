@@ -8,7 +8,6 @@ public class GameEngine extends JPanel implements Runnable {
     private boolean running = false;
     private int repaints = 0;
     private Handler handler;
-
     private Status status;
 
 
