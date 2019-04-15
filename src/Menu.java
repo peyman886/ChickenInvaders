@@ -6,15 +6,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Menu extends JFrame {
@@ -65,15 +60,17 @@ public class Menu extends JFrame {
         menuPanel.setBounds(0, 0, width, height);
         menuPanel.setLayout(null);
 
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read
-                    (new File("image/chicken-invaders-hd-wallpaper-0.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        MyLable backgroundImage = new MyLable(new ImageIcon(image));
-        menuPanel.add(backgroundImage);
+//        BufferedImage image = null;
+//        try {
+//            image = ImageIO.read
+//                    (new File("image/chicken-invaders-hd-wallpaper-0.jpg"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        MyLable backgroundImage = new MyLable(new ImageIcon(image));
+//        menuPanel.add(backgroundImage);
+//
+
         setContentPane(menuPanel);
 
         usersLabel = new MyLable("کاربران");
@@ -93,7 +90,14 @@ public class Menu extends JFrame {
         menuPanel.add(loginButton);
         removeUserButton = new MyButton("حذف کاربر");
         removeUserButton.setBounds(width/2 - myButtonWith/2,height-margin-100,myButtonWith,myButtonHeight);
+        removeUserButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                removeUser();
+                userList.setListData(usersName.toArray());
 
+            }
+        });
         menuPanel.add(removeUserButton);
         addUserButton = new MyButton("افزودن کاربر");
         addUserButton.setBounds(5 * (width/6) - myButtonWith/2,height-margin -100,myButtonWith,myButtonHeight);
@@ -101,8 +105,7 @@ public class Menu extends JFrame {
         addUserButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                usersName.add(getNewNamePlayer());
-                userList.setListData(usersName.toArray());
+                addUser();
             }
         });
 
@@ -122,10 +125,25 @@ public class Menu extends JFrame {
         }
         userList.setListData(usersName.toArray());
     }
+    private void addUser(){
+        usersName.add(getNewNamePlayer());
+        userList.setListData(usersName.toArray());
+
+    }
     private String getNewNamePlayer(){
         String nameOfNewUser = JOptionPane.showInputDialog(null,
                 "please enter your name");
         return nameOfNewUser;
+    }
+    private void removeUser(){
+        int i = userList.getSelectedIndex();
+        usersName.remove(i);
+//        DefaultListModel model = (DefaultListModel) userList.getModel();
+//        int selectedIndex = userList.getSelectedIndex();
+//        if (selectedIndex != -1) {
+//            model.remove(selectedIndex);
+//        }
+
     }
 
 }
