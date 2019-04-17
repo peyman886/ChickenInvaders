@@ -3,22 +3,26 @@ package MyGraphic;
 import javax.swing.*;
 
 public class MyButton extends JButton {
-    public MyButton() {
-    }
+    private static final int myButtonWidth = 100,
+            myButtonHeight = 50;
+    private int x;
+    private int y;
 
-    public MyButton(Icon icon) {
-        super(icon);
+    public void setBounds(int x, int y) {
+        this.x = x;
+        this.y = y;
+        super.setBounds(x, y, myButtonWidth, myButtonHeight);
     }
 
     public MyButton(String text) {
         super(text);
     }
 
-    public MyButton(Action a) {
-        super(a);
+    public static int getMyButtonWidth() {
+        return myButtonWidth;
     }
 
-    public MyButton(String text, Icon icon) {
-        super(text, icon);
+    public static int getMyButtonHeight() {
+        return myButtonHeight;
     }
 }

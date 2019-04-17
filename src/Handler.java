@@ -1,6 +1,9 @@
+import MyInterface.Drawable;
+
 import java.awt.*;
 
-public class Handler {
+public class Handler implements Drawable {
     public void tick(){};
-    public void draw(Graphics g){};
+    public void draw(Graphics g){
+    }
 }

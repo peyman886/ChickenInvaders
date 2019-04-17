@@ -1,3 +1,5 @@
+package MyInterface;
+
 import java.awt.*;
 
 public interface Drawable {

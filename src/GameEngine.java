@@ -92,6 +92,7 @@ public class GameEngine extends JPanel implements Runnable {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        handler.draw(g);
         repaints++;
     }
 

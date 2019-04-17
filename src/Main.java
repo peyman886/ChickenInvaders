@@ -3,9 +3,12 @@ import java.awt.*;
 import java.io.IOException;
 
 public class Main {
+
     public static void main(String[] args) {
-        Menu menu = new Menu();
+//        Menu menu = new Menu();
+        Game newGame = Game.getInstance();
     }
+
 
 //    private static void createAndShowGUI(){
 //        //Create and setup the window
@@ -23,7 +26,7 @@ public class Main {
 //        //Display the window
 //        gameFrame.setVisible(true);
 //    }
-
+//
 //    public static void main(String[] args) {
 //        SwingUtilities.invokeLater(new Runnable() {
 //            @Override
