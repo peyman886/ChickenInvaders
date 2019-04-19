@@ -11,22 +11,13 @@ public class MyPanel extends JPanel {
             height = 800,
             margin = 10;
 
-
-
-    private BufferedImage image ;
+    protected BufferedImage image ;
     public MyPanel(BufferedImage image) {
         this.image = image;
         setBounds(0, 0, width, height);
         setLayout(null);
 
     }
-
-
-
-
-
-
-
     @Override
     public void paintComponents(Graphics g) {
         super.paintComponents(g);

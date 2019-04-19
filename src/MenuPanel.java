@@ -4,6 +4,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -36,14 +37,17 @@ public class MenuPanel extends MyPanel {
     private MyButton addUserButton;
     private MyButton removeUserButton;
 
-    private final static BufferedImage BackGround = ImageOfGame.getBGImageOfMenu();
+    private final static BufferedImage BackGround = ImageOfGame.getInstance().getBGImageOfMenu();
 
     public MenuPanel() {
         super(BackGround);
         init();
     }
 
-
+    @Override
+    public void paintComponents(Graphics g) {
+        super.paintComponents(g);
+    }
     //    public Menu(Image image) {
 //        super(BackGround);
 //        setBounds(x,y,width,height);
@@ -92,7 +96,7 @@ public class MenuPanel extends MyPanel {
             {
                 settingPanel = new SettingPanel();
                 Game.getInstance().setGamePanel(settingPanel);
-                System.out.println("ajab");
+                System.out.println("button login is pressed");
                 //to do
                 //login to game of this user
 

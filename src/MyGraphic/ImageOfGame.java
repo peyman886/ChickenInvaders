@@ -8,13 +8,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ImageOfGame {
+    private static ImageOfGame iamgeOfImage = new ImageOfGame();
+    public static ImageOfGame getInstance(){
+        return iamgeOfImage;
+    }
+
+
     private final static BufferedImage [] images = new BufferedImage[2];
 
     private ImageOfGame() {
         readAndPutImagesInArray(0,"image/menuBG.jpg");
         readAndPutImagesInArray(1,"image/SettingBG.jpg");
     }
-    private static void readAndPutImagesInArray (int i,String adress){
+    private void readAndPutImagesInArray (int i,String adress){
         File file = new File(adress);
         BufferedImage image = null;
         try
@@ -28,10 +34,10 @@ public class ImageOfGame {
         images[i] = image;
     }
 
-    public static BufferedImage getBGImageOfMenu(){
+    public BufferedImage getBGImageOfMenu(){
         return images[0];
     }
-    public static BufferedImage getStImage(){
+    public BufferedImage getStImage(){
         return images[1];
     }
 

@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 public class SettingPanel extends MyPanel {
     private MyButton resumeGame;
     private MyButton startNewGame;
+    private GamePanel gamePanel;
     private MyButton ranking;
 
     private MyButton setting;
@@ -16,8 +17,7 @@ public class SettingPanel extends MyPanel {
     private MyButton aboutUs;
 
 
-    private final static BufferedImage BackGround = ImageOfGame.getStImage();
-
+    private final static BufferedImage BackGround = ImageOfGame.getInstance().getStImage();
     public SettingPanel() {
         super(BackGround);
         init();
@@ -37,20 +37,21 @@ public class SettingPanel extends MyPanel {
         });
         this.add(resumeGame);
         startNewGame = new MyButton("شروع بازی جدید");
-        startNewGame.setBounds(width/2 - MyButton.getMyButtonWidth()/2 +MyButton.getMyButtonWidth()+margin,
+        startNewGame.setBounds(width/2 - MyButton.getMyButtonWidth()/2,
                 height/2 - MyButton.getMyButtonHeight()/2 + MyButton.getMyButtonHeight() + margin);
         startNewGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                //to do
-                //login to game of this user
+                 gamePanel = new GamePanel();
+                Game.getInstance().setGamePanel(gamePanel);
+                System.out.println("button startNewGame is pressed");
             }
         });
         this.add(startNewGame);
 
         ranking = new MyButton("رتبه بندی");
-        ranking.setBounds(width/2 - MyButton.getMyButtonWidth()/2 + 2 * MyButton.getMyButtonWidth()+ 2* margin,
+        ranking.setBounds(width/2 - MyButton.getMyButtonWidth()/2,
                 height/2 - MyButton.getMyButtonHeight()/2 + 2 * MyButton.getMyButtonHeight() + 2* margin);
         ranking.addActionListener(new ActionListener()  {
             @Override
@@ -64,7 +65,7 @@ public class SettingPanel extends MyPanel {
 
         setting = new MyButton("تنظیمات");
         setting.setBounds(width/2 - MyButton.getMyButtonWidth()/2,
-                height - MyButton.getMyButtonHeight()/2 -margin);
+                height - MyButton.getMyButtonHeight() -margin - 100);
         setting.addActionListener(new ActionListener()  {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -75,19 +76,18 @@ public class SettingPanel extends MyPanel {
         });
         this.add(setting);
         exit = new MyButton("خروج");
-        exit.setBounds(margin,
-                height - MyButton.getMyButtonHeight()/2 -margin);
+        exit.setBounds(margin +50 ,
+                height - MyButton.getMyButtonHeight() -margin -100);
         exit.addActionListener(new ActionListener()  {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-
             }
         });
         this.add(exit);
         aboutUs = new MyButton("درباره ما");
-        aboutUs.setBounds(width-margin,
-                height - MyButton.getMyButtonHeight()/2 -margin);
+        aboutUs.setBounds(width-margin -MyButton.getMyButtonWidth() -50 ,
+                height - MyButton.getMyButtonHeight() -margin -100);
         aboutUs.addActionListener(new ActionListener()  {
             @Override
             public void actionPerformed(ActionEvent e)

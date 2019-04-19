@@ -17,13 +17,13 @@ public class GameFrame extends JFrame{
         setResizable(false);
         setLayout(null);
         setContentPane(contentPanePanel);
+        contentPanePanel.repaint();
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         addWindowListener(new WindowAdapter()
         {
             @Override
-            public void windowClosing(WindowEvent e)
-            {
+            public void windowClosing(WindowEvent e) {
 //                saveUsersToFile();
                 System.out.println("Closed");
                 e.getWindow().dispose();
@@ -31,6 +31,7 @@ public class GameFrame extends JFrame{
         });
 
     }
+
 //    private JPanel contentPanePanel;
 //    private int width, height;
 //
