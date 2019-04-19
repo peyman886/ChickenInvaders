@@ -2,6 +2,7 @@ import MyGraphic.MyButton;
 import MyGraphic.MyPanel;
 import MyGraphic.ImageOfGame;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -17,8 +18,11 @@ public class SettingPanel extends MyPanel {
     private MyButton aboutUs;
 
 
-    private final static BufferedImage BackGround = ImageOfGame.getInstance().getStImage();
+//    private final static BufferedImage BackGround = ImageOfGame.getInstance().getSettingImage();
+    private final static Image BackGround = ImageOfGame.getInstance().getSettingImage();
+
     public SettingPanel() {
+
         super(BackGround);
         init();
 

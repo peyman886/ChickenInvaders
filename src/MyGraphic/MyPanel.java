@@ -11,21 +11,37 @@ public class MyPanel extends JPanel {
             height = 800,
             margin = 10;
 
-    protected BufferedImage image ;
-    public MyPanel(BufferedImage image) {
+//    protected BufferedImage image ;
+    protected Image image ;
+//
+//    public MyPanel(BufferedImage image) {
+//        this.image = image;
+//        setBounds(0, 0, width, height);
+//        setLayout(null);
+//
+//    }
+    public MyPanel(Image image) {
         this.image = image;
         setBounds(0, 0, width, height);
         setLayout(null);
 
     }
+//    @Override
+//    public void paintComponents(Graphics g) {
+//        super.paintComponents(g);
+//        drawBackGround(g);
+//    }
+//    private void drawBackGround(Graphics g) {
+//        g.drawImage(image,0,0,this);
+//
+//    }
     @Override
-    public void paintComponents(Graphics g) {
-        super.paintComponents(g);
-        drawBackGround(g);
-    }
-    private void drawBackGround(Graphics g) {
-        g.drawImage(image,0,0,this);
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g ;
 
+        g2.drawImage(image,0,0,new Color(0,0,0,0),null);
+        repaint();
     }
     @Override
     public void setBounds(int x, int y, int width, int height) {
@@ -43,4 +59,7 @@ public class MyPanel extends JPanel {
 //        super.paintComponents(g);
 //        g.drawImage(image,0,0,null);
 //    }
+
+
+
 }

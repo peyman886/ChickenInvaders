@@ -37,17 +37,18 @@ public class MenuPanel extends MyPanel {
     private MyButton addUserButton;
     private MyButton removeUserButton;
 
-    private final static BufferedImage BackGround = ImageOfGame.getInstance().getBGImageOfMenu();
+//    private final static BufferedImage BackGround = ImageOfGame.getInstance().getBackGroundImageOfMenu();
+    private final static Image BackGround = ImageOfGame.getInstance().getBackGroundImageOfMenu();
 
     public MenuPanel() {
         super(BackGround);
         init();
     }
 
-    @Override
-    public void paintComponents(Graphics g) {
-        super.paintComponents(g);
-    }
+//    @Override
+//    public void paintComponents(Graphics g) {
+//        super.paintComponents(g);
+//    }
     //    public Menu(Image image) {
 //        super(BackGround);
 //        setBounds(x,y,width,height);
