@@ -54,10 +54,14 @@ public class GamePanel extends MyPanel implements Tickable {
     @Override
     public void paintComponents(Graphics g) {
         super.paintComponents(g);
-        statusOfSc.draw(g);
-        spacecraft.draw(g);
+        Graphics2D g2 = (Graphics2D) g ;
+
+        g2.drawImage(spacecraft.getScImage(),spacecraft.getX(),spacecraft.getY(),new Color(0,0,0,0),null);
+        repaint();
+//        statusOfSc.draw(g);
+//        spacecraft.draw(g);
         for (Bullet bullet : bullets) {
-            bullet.draw(g);
+            g2.drawImage(bullet.getBulletImage(),bullet.getX(),bullet.getY(),new Color(0,0,0,0),null);
             repaint();
         }
         repaint();
@@ -106,6 +110,7 @@ public class GamePanel extends MyPanel implements Tickable {
             g.drawString(stTemp,x+5*widthOgImageIcon,y);
 
         }
+
 
     }
 }

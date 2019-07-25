@@ -23,6 +23,18 @@ public class Bullet implements Drawable , Tickable {
         g.drawImage(bulletImage,x,y,null);
     }
 
+    public Image getBulletImage() {
+        return bulletImage;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     @Override
     public void tick() { this.y++; }
 }

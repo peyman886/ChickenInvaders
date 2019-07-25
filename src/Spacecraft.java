@@ -66,6 +66,10 @@ public class Spacecraft implements Drawable, Tickable {
     public int getX() { return x; }
     public int getY() { return y; }
 
+    public Image getScImage() {
+        return scImage;
+    }
+
     public void setX(int x) {
         this.x = x;
     }
